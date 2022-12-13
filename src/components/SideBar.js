@@ -1,6 +1,8 @@
 import React from 'react';
 import LogoDH from '../assets/images/logo-DH.png'
 
+let options = ["Pages","Charts","Tables"];
+
 function SideBar() {
     return (
         
@@ -24,24 +26,14 @@ function SideBar() {
 
 			<div className="sidebar-heading">Actions</div>
 
+			{options.map( (options, index) =>			
 			<li className="nav-item">
 				<a className="nav-link collapsed" href="/">
-					<i className="fas fa-fw fa-folder"></i>
-					<span>Pages</span>
+					<i key={index} className="fas fa-fw fa-folder"></i>
+					<span>{options}</span>
 				</a>
-			</li>
-
-			<li className="nav-item">
-				<a className="nav-link" href="/">
-					<i className="fas fa-fw fa-chart-area"></i>
-					<span>Charts</span></a>
-			</li>
-
-			<li className="nav-item">
-				<a className="nav-link" href="/">
-					<i className="fas fa-fw fa-table"></i>
-					<span>Tables</span></a>
-			</li>
+			</li>)}
+			
 
 			<hr className="sidebar-divider d-none d-md-block" />
 		</ul>

@@ -3,28 +3,41 @@ import React from 'react';
 import PropTypes from 'prop-types'
 
 let tabla = [{titulo: "Hola Mundo2", duracion: 90, rating: 5, genero: ["accion", "comedia"], premios: 2},
-             {titulo: "Hola Mundo2", duracion: 180, rating: 5, genero: ["comedia"], premios: 3} ];
+             {titulo: "Hola Mundo2", duracion: 180, rating: 5, genero: ["comedia"], premios: 3},
+             {titulo: "Hola Mundo2", duracion: 180, rating: 5, genero: ["comedia"], premios: 3},
+             {titulo: "Hola Mundo2", duracion: 180, rating: 5, genero: ["comedia"], premios: 3},
+             {titulo: "Hola Mundo2", duracion: 180, rating: 5, genero: ["comedia"], premios: 3},
+             {titulo: "Hola Mundo2", duracion: 90, rating: 5, genero: ["accion", "comedia"], premios: 2},
+             {titulo: "Hola Mundo2", duracion: 90, rating: 5, genero: ["accion", "comedia"], premios: 2},
+             {titulo: "Hola Mundo2", duracion: 90, rating: 5, genero: ["accion", "comedia"], premios: 2}, ];
 
 function TableHead(){
-    return(<tr>
-        <td>Título</td>
-        <td>Duración</td>
-        <td>Rating</td>
-        <td>Genero</td>
-        <td>Premios</td>
-</tr>)   
+    return(
+    <thead class="thead-dark">
+        <tr>
+            <th>Título</th>
+            <th>Duración</th>
+            <th>Rating</th>
+            <th>Genero</th>
+            <th>Premios</th>
+        </tr>
+    </thead>)   
 
 };
 
 function TableData(props){
+    let genero = props.genero.map(genre => <tr>{genre}</tr> )
+
     return(
-        <tr><td>{props.titulo}</td><td>{props.duracion}</td><td>{props.rating}</td><td>{props.genero}</td><td>{props.premios}</td></tr>
+        <tbody>
+            <tr><th>{props.titulo}</th><th>{props.duracion}</th><th>{props.rating}</th>{genero}<th>{props.premios}</th></tr>
+        </tbody>
     )
 };
 
 function TableInfo() {
     return (
-        <table style={{width: "100%",  border: "1px solid black"}}>
+        <table className= "table table-striped" style={{width: "100%",  border: "1px solid black"}}>
             
             <TableHead/>
                 
